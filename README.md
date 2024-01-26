@@ -1,2 +1,3 @@
 # Institute-Genie
-Recommends Top Best Institutes with the help of AISHE Data
+AI-Based Good Institute Prediction Model
+Utilizing the AISHE dataset, to assess institutional performance in higher education. The model employs machine learning to analyze AISHE data and identify top-performing institutions based on various metrics. Interactive visualizations aid users in making informed decisions. This tool is valuable for students, educators, and policymakers in India's higher education landscape. The paper discusses data collection, including enrollment, faculty, infrastructure, and programs offered. It defines criteria for "good institutes," encompassing academics, enrollment, faculty-student ratios, and research output. The model aims to revolutionize institutional assessment, facilitating resource allocation and improving higher education quality in India.
