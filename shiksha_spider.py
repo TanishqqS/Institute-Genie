@@ -13,15 +13,16 @@ class ShikshaSpider(scrapy.Spider):
     ]
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
-        uni_links = response.css('a.rank_clg.ripple.dark::attr(href)').extract()
+        uni_links = response.css('a.rank_clg.ripple.dark::attr(href)').extract()        #href links of the universities
         # yield {'href': href_links}
         for uni in uni_links:
             absolute_url = urljoin(response.url, uni)
             yield scrapy.Request(absolute_url, callback=self.parse_university)
 
+    # this would partially work separately
     def parse_university(self, response: Response, **kwargs: Any) -> Any:
-        href_links = response.css('li a.listItem.ripple.dark::attr(href)').extract()
-        for href in href_links:
+        href_links = response.css('li a.listItem.ripple.dark::attr(href)').extract()        #href links to the different tabs
+        for href in href_links:                
             absolute_url = urljoin(response.url, href)
             yield scrapy.Request(absolute_url, callback=self.parse_page)
 
